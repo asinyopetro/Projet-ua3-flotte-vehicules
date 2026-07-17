@@ -1,0 +1,15 @@
+# Ignore
+*.class
+*.jar
+*.war
+out/
+build/
+.idea/
+*.iml
+.vscode/
+*.log
+reports/*.txt
+reports/*.csv
+!reports/.gitkeep
+.DS_Store
+Thumbs.db

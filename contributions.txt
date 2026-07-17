@@ -1,0 +1,14 @@
+# Contributions
+
+## Komla Petro Asinyo (PetroAsinyo/)
+- À compléter au fur et à mesure des commits
+- Prévu : modèle véhicules, interfaces, exceptions
+
+## Kassoum Dene (KassoumDene/)
+- À compléter au fur et à mesure des commits
+- Prévu : CSV, gestionnaire de flotte, statistiques, rapport
+
+## Travail collaboratif
+- Dépôt GitHub partagé
+- Commits réguliers depuis IntelliJ
+- Chaque membre documente son travail dans son dossier personnel
