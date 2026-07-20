@@ -8,7 +8,7 @@
 | Nom | Dossier | GitHub |
 |-----|---------|--------|
 | Komla Petro Asinyo | `PetroAsinyo/` | [asinyopetro](https://github.com/asinyopetro) |
-| Kassoum Dene | `KassoumDene/` | *(à compléter)* |
+| Kassoum Dene | `KassoumDene/` | [Youri2K](https://github.com/Youri2K) |
 
 ## Objectif
 
