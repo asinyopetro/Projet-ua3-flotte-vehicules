@@ -8,7 +8,7 @@
 - Partie démo dans `Main.java` (affichage du parc, locations, retours, entretien)
 
 ## Kassoum Dene (KassoumDene/)
-- Création du fichier CSV `data/vehicules.csv` (17 véhicules + 1 ligne invalide)
+- Création du fichier CSV `data/vehicules.csv` (17 véhicules + 2 lignes invalides)
 - Implémentation de `VehiculeFactory` et `CsvVehiculeLoader`
 - Développement de `GestionnaireFlotte` (location, retour, entretien, règles métier)
 - Développement de `CalculateurStatistiques` et `GenerateurRapport`

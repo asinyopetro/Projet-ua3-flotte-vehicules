@@ -84,7 +84,7 @@ public class Main {
         System.out.println("\n--- Démonstration: entretien ---");
         try {
             flotte.signalerEntretien("V005");
-            System.out.println("Entretien signalé pour V005.");
+            System.out.println("Entretien signalé pour V005 (véhicule indisponible).");
             flotte.terminerEntretien("V005");
             System.out.println("Entretien terminé pour V005.");
         } catch (VehiculeIndisponibleException e) {
@@ -97,6 +97,22 @@ public class Main {
             flotte.retourner("V002", 10000, 2);
         } catch (VehiculeIndisponibleException | KilometrageInvalideException e) {
             System.out.println("Erreur capturée (attendu): " + e.getMessage());
+        }
+
+        // Remet V002 en état cohérent après le test d'erreur
+        try {
+            double tarifCorrige = flotte.retourner("V002", 63500, 2);
+            System.out.printf("Retour corrigé V002 — tarif: %.2f $\n", tarifCorrige);
+        } catch (VehiculeIndisponibleException | KilometrageInvalideException e) {
+            System.out.println("Erreur retour corrigé: " + e.getMessage());
+        }
+
+        // Retour de C002 pour laisser le parc propre avant les statistiques
+        try {
+            double tarifCamion = flotte.retourner("C002", 49500, 4);
+            System.out.printf("Retour C002 — tarif: %.2f $\n", tarifCamion);
+        } catch (VehiculeIndisponibleException | KilometrageInvalideException e) {
+            System.out.println("Erreur retour C002: " + e.getMessage());
         }
     }
 

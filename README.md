@@ -16,7 +16,7 @@ Application console Java permettant de gérer une flotte de véhicules de locati
 
 ## Fonctionnalités
 
-- Chargement d'un fichier CSV (17 véhicules valides + 1 ligne invalide)
+- Chargement d'un fichier CSV (17 véhicules valides + 2 lignes invalides)
 - Hiérarchie de véhicules (`Vehicule` abstrait → `Voiture`, `Camion`, `Moto`)
 - Interfaces : `Louable`, `Entretenable`, `Rapportable`
 - Exceptions personnalisées et validation des données

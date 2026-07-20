@@ -2,7 +2,7 @@ Travail de Kassoum Dene
 =======================
 
 ## Fichiers développés
-- data/vehicules.csv — 17 véhicules + 1 ligne invalide (BUS, km négatif)
+- data/vehicules.csv — 17 véhicules + 2 lignes invalides (type BUS, km négatif)
 - src/services/VehiculeFactory.java — création des véhicules par type
 - src/services/CsvVehiculeLoader.java — lecture et validation CSV
 - src/services/GestionnaireFlotte.java — location, retour, entretien
