@@ -1,14 +1,21 @@
-# Contributions
+# Contributions — Projet 3 Flotte de véhicules
 
 ## Komla Petro Asinyo (PetroAsinyo/)
-- À compléter au fur et à mesure des commits
-- Prévu : modèle véhicules, interfaces, exceptions
+- Conception de la classe abstraite `Vehicule` et des sous-classes `Voiture`, `Camion`, `Moto`
+- Implémentation des interfaces `Louable`, `Entretenable`, `Rapportable`
+- Création des exceptions personnalisées (`DonneeInvalideException`, `VehiculeIndisponibleException`, `KilometrageInvalideException`)
+- Redéfinition de `calculerTarif()` pour chaque type de véhicule
+- Partie démo dans `Main.java` (affichage du parc, locations, retours, entretien)
 
 ## Kassoum Dene (KassoumDene/)
-- À compléter au fur et à mesure des commits
-- Prévu : CSV, gestionnaire de flotte, statistiques, rapport
+- Création du fichier CSV `data/vehicules.csv` (17 véhicules + 1 ligne invalide)
+- Implémentation de `VehiculeFactory` et `CsvVehiculeLoader`
+- Développement de `GestionnaireFlotte` (location, retour, entretien, règles métier)
+- Développement de `CalculateurStatistiques` et `GenerateurRapport`
+- Partie statistiques et génération de rapport dans `Main.java`
+- Menu interactif optionnel (`--menu`)
 
 ## Travail collaboratif
-- Dépôt GitHub partagé
+- Dépôt GitHub partagé : https://github.com/asinyopetro/Projet-ua3-flotte-vehicules
 - Commits réguliers depuis IntelliJ
 - Chaque membre documente son travail dans son dossier personnel

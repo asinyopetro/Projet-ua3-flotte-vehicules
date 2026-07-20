@@ -16,13 +16,15 @@ Application console Java permettant de gérer une flotte de véhicules de locati
 
 ## Fonctionnalités
 
-- Chargement d'un fichier CSV (≥15 véhicules, dont au moins une donnée invalide)
+- Chargement d'un fichier CSV (17 véhicules valides + 1 ligne invalide)
 - Hiérarchie de véhicules (`Vehicule` abstrait → `Voiture`, `Camion`, `Moto`)
-- Interfaces : location, entretien, rapport
+- Interfaces : `Louable`, `Entretenable`, `Rapportable`
 - Exceptions personnalisées et validation des données
 - Calcul de tarifs par type (redéfinition de méthodes)
+- Gestion des locations, retours et entretiens
 - Statistiques (revenu, kilométrage, utilisation, entretien)
-- Génération d'un rapport TXT/CSV
+- Génération d'un rapport TXT dans `reports/`
+- Menu interactif optionnel (`--menu`)
 - Conception ouverte à l'ajout d'un nouveau type de véhicule (OCP)
 
 ## Structure
@@ -33,15 +35,43 @@ Application console Java permettant de gérer une flotte de véhicules de locati
 ├── data/vehicules.csv
 ├── reports/
 ├── src/
+│   ├── Main.java
+│   ├── modele/
+│   ├── interfaces/
+│   ├── exceptions/
+│   └── services/
 ├── PetroAsinyo/
 └── KassoumDene/
 ```
 
 ## Exécution
 
-*(Instructions à compléter après l'implémentation — IntelliJ / `javac` + `java`)*
+### IntelliJ IDEA
+
+1. Ouvrir le dossier du projet
+2. Marquer `src/` comme **Sources Root**
+3. Exécuter `Main.java`
+4. (Optionnel) Ajouter `--menu` dans *Run → Edit Configurations → Program arguments*
+
+### Ligne de commande
+
+```powershell
+# Compiler
+Get-ChildItem -Path src -Recurse -Filter *.java | ForEach-Object { $_.FullName } | ForEach-Object { } 
+javac -encoding UTF-8 -d out (Get-ChildItem -Path src -Recurse -Filter *.java | ForEach-Object { $_.FullName })
+
+# Exécuter (depuis la racine du projet)
+java -cp out Main
+
+# Avec menu interactif
+java -cp out Main --menu
+```
 
 ## Principes SOLID
 
-- **SRP** : services séparés (CSV, flotte, statistiques, rapport)
-- **OCP** : nouveau type de véhicule sans modifier le cœur de la flotte
+- **SRP** : `CsvVehiculeLoader`, `GestionnaireFlotte`, `CalculateurStatistiques` et `GenerateurRapport` ont chacun une responsabilité unique
+- **OCP** : ajout d'un nouveau type via `VehiculeFactory` sans modifier la logique de la flotte
+
+## Lien GitHub
+
+https://github.com/asinyopetro/Projet-ua3-flotte-vehicules
