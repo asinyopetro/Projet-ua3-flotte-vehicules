@@ -7,6 +7,7 @@ import services.GenerateurRapport;
 import services.GestionnaireFlotte;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
@@ -15,8 +16,9 @@ import java.util.Scanner;
 /** Point d'entrée du programme. */
 public class Main {
 
-    private static final Path FICHIER_CSV = Path.of("data", "vehicules.csv");
-    private static final Path FICHIER_RAPPORT = Path.of("reports", "rapport_flotte.txt");
+    private static final Path RACINE = trouverRacineProjet();
+    private static final Path FICHIER_CSV = RACINE.resolve(Path.of("data", "vehicules.csv"));
+    private static final Path FICHIER_RAPPORT = RACINE.resolve(Path.of("reports", "rapport_flotte.txt"));
 
     public static void main(String[] args) {
         System.out.println("=== Gestion de flotte de véhicules — UA3 ===\n");
@@ -35,7 +37,21 @@ public class Main {
             System.out.println("\nProgramme terminé avec succès.");
         } catch (IOException e) {
             System.err.println("Erreur de fichier: " + e.getMessage());
+            System.err.println("Astuce IntelliJ: Run → Edit Configurations → Working directory = dossier du projet.");
         }
+    }
+
+    /** Cherche le dossier qui contient data/vehicules.csv (marche même si IntelliJ part de src/). */
+    private static Path trouverRacineProjet() {
+        Path courant = Path.of("").toAbsolutePath().normalize();
+        Path p = courant;
+        for (int i = 0; i < 6 && p != null; i++) {
+            if (Files.exists(p.resolve("data").resolve("vehicules.csv"))) {
+                return p;
+            }
+            p = p.getParent();
+        }
+        return courant;
     }
 
     private static GestionnaireFlotte chargerFlotte() throws IOException {
