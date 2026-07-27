@@ -8,9 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-/**
- * Calcule les statistiques agrégées de la flotte (SRP).
- */
+/** Stats sur la flotte (revenu, km, utilisation, etc.). */
 public class CalculateurStatistiques {
 
     private final List<Vehicule> vehicules;

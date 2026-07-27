@@ -11,9 +11,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Responsable unique du chargement et de la validation du CSV (SRP).
- */
+/** Lecture du CSV et validation des lignes. */
 public class CsvVehiculeLoader {
 
     private static final int COLONNES_ATTENDUES = 11;

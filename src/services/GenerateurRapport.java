@@ -11,9 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Génère le rapport texte de synthèse de la flotte.
- */
+/** Ecrit le rapport texte dans reports/. */
 public class GenerateurRapport {
 
     private static final DateTimeFormatter FORMAT_DATE =

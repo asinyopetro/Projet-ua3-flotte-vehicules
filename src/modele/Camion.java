@@ -1,8 +1,6 @@
 package modele;
 
-/**
- * Véhicule utilitaire lourd — tarif adapté à la charge utile.
- */
+/** Camion : le tarif dépend de la charge utile. */
 public class Camion extends Vehicule {
 
     private final double chargeUtileKg;

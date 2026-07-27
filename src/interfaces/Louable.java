@@ -3,9 +3,7 @@ package interfaces;
 import exceptions.KilometrageInvalideException;
 import exceptions.VehiculeIndisponibleException;
 
-/**
- * Contrat pour les opérations de location et de retour.
- */
+/** Location et retour d'un vehicule. */
 public interface Louable {
 
     void louer() throws VehiculeIndisponibleException;

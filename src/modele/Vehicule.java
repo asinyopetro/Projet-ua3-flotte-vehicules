@@ -6,10 +6,7 @@ import interfaces.Entretenable;
 import interfaces.Louable;
 import interfaces.Rapportable;
 
-/**
- * Classe abstraite représentant un véhicule de la flotte.
- * Factorise les attributs et comportements communs (SRP au niveau hiérarchie).
- */
+/** Classe de base pour tous les véhicules de la flotte. */
 public abstract class Vehicule implements Louable, Entretenable, Rapportable {
 
     private final String id;

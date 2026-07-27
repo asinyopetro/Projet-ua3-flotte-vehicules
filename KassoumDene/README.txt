@@ -1,16 +1,16 @@
 Travail de Kassoum Dene
 =======================
 
-## Fichiers développés
-- data/vehicules.csv — 17 véhicules + 2 lignes invalides (type BUS, km négatif)
-- src/services/VehiculeFactory.java — création des véhicules par type
-- src/services/CsvVehiculeLoader.java — lecture et validation CSV
-- src/services/GestionnaireFlotte.java — location, retour, entretien
-- src/services/CalculateurStatistiques.java — statistiques agrégées
-- src/services/GenerateurRapport.java — export rapport TXT
-- src/Main.java — statistiques, rapport, menu interactif
+Fichiers :
+- data/vehicules.csv (17 vehicules + 2 lignes invalides)
+- src/services/VehiculeFactory.java
+- src/services/CsvVehiculeLoader.java
+- src/services/GestionnaireFlotte.java
+- src/services/CalculateurStatistiques.java
+- src/services/GenerateurRapport.java
+- partie stats / rapport / menu dans Main.java
 
-## Principes appliqués
-- SRP : une classe par responsabilité (CSV, flotte, stats, rapport)
-- Gestion des exceptions lors du chargement CSV
-- ArrayList pour stocker la flotte
+Notes :
+- le CSV est lu et les mauvaises lignes sont ignorees avec un message
+- flotte stockee dans une ArrayList
+- chaque service s'occupe d'une chose (charger, gerer, stats, rapport)

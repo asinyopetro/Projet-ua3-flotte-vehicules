@@ -1,8 +1,6 @@
 package modele;
 
-/**
- * Véhicule léger — tarif basé sur le nombre de places.
- */
+/** Voiture : le tarif dépend du nombre de places. */
 public class Voiture extends Vehicule {
 
     private final int nombrePlaces;

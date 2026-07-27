@@ -9,9 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Gère les opérations métier sur la flotte (location, retour, entretien).
- */
+/** Location, retour et entretien des véhicules. */
 public class GestionnaireFlotte {
 
     public static final int MAX_LOCATIONS_SIMULTANEES = 5;

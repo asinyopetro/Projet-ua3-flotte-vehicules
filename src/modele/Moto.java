@@ -1,8 +1,6 @@
 package modele;
 
-/**
- * Deux-roues motorisé — tarif réduit avec léger ajustement selon la cylindrée.
- */
+/** Moto : tarif de base plus bas, bonus si grosse cylindrée. */
 public class Moto extends Vehicule {
 
     private final int cylindree;

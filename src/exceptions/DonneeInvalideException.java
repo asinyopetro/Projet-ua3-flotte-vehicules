@@ -1,8 +1,6 @@
 package exceptions;
 
-/**
- * Levée lorsque des données CSV ou métier sont invalides.
- */
+/** Donnee CSV ou champ invalide. */
 public class DonneeInvalideException extends Exception {
 
     public DonneeInvalideException(String message) {

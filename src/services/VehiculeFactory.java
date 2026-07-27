@@ -6,9 +6,7 @@ import modele.Moto;
 import modele.Vehicule;
 import modele.Voiture;
 
-/**
- * Fabrique de véhicules — permet d'ajouter un nouveau type sans modifier la flotte (OCP).
- */
+/** Crée le bon type de véhicule selon le champ "type" du CSV. */
 public class VehiculeFactory {
 
     public Vehicule creer(String type, String id, String marque, String modele,

@@ -1,7 +1,7 @@
 # Gestion d'une flotte de véhicules
 
-**Cours :** Programmation Avancée · UA3 · Printemps 2026  
-**Projet :** Projet 3 — Conception orientée objet appliquée à l'analyse de données
+Cours : Programmation Avancée (UA3) — Printemps 2026  
+Projet 3 : conception orientée objet appliquée à l'analyse de données
 
 ## Membres
 
@@ -12,20 +12,18 @@
 
 ## Objectif
 
-Application console Java permettant de gérer une flotte de véhicules de location : catalogue (héritage), location/retour, entretien, statistiques et génération de rapport.
+Petit programme console en Java pour gérer une flotte de location : catalogue de véhicules, locations / retours, entretien, quelques stats et un rapport texte.
 
-## Fonctionnalités
+## Ce que fait le programme
 
-- Chargement d'un fichier CSV (17 véhicules valides + 2 lignes invalides)
-- Hiérarchie de véhicules (`Vehicule` abstrait → `Voiture`, `Camion`, `Moto`)
-- Interfaces : `Louable`, `Entretenable`, `Rapportable`
-- Exceptions personnalisées et validation des données
-- Calcul de tarifs par type (redéfinition de méthodes)
-- Gestion des locations, retours et entretiens
-- Statistiques (revenu, kilométrage, utilisation, entretien)
-- Génération d'un rapport TXT dans `reports/`
-- Menu interactif optionnel (`--menu`)
-- Conception ouverte à l'ajout d'un nouveau type de véhicule (OCP)
+- Charge `data/vehicules.csv` (17 véhicules valides + 2 lignes invalides pour tester les erreurs)
+- Hiérarchie `Vehicule` (abstraite) → `Voiture`, `Camion`, `Moto`
+- Interfaces `Louable`, `Entretenable`, `Rapportable`
+- Exceptions perso + validation à la lecture du CSV
+- Tarif différent selon le type (`calculerTarif` redéfini)
+- Stats (revenu, km, utilisation, entretien) + fichier dans `reports/`
+- Menu optionnel avec `--menu`
+- On peut ajouter un nouveau type de véhicule surtout via la factory (OCP)
 
 ## Structure
 
@@ -44,34 +42,28 @@ Application console Java permettant de gérer une flotte de véhicules de locati
 └── KassoumDene/
 ```
 
-## Exécution
+## Lancer le projet
 
-### IntelliJ IDEA
+### IntelliJ
 
 1. Ouvrir le dossier du projet
-2. Marquer `src/` comme **Sources Root**
-3. Exécuter `Main.java`
-4. (Optionnel) Ajouter `--menu` dans *Run → Edit Configurations → Program arguments*
+2. Marquer `src/` comme Sources Root
+3. Lancer `Main.java`
+4. Optionnel : ajouter `--menu` dans les arguments du Run Configuration
 
 ### Ligne de commande
 
 ```powershell
-# Compiler
-Get-ChildItem -Path src -Recurse -Filter *.java | ForEach-Object { $_.FullName } | ForEach-Object { } 
 javac -encoding UTF-8 -d out (Get-ChildItem -Path src -Recurse -Filter *.java | ForEach-Object { $_.FullName })
-
-# Exécuter (depuis la racine du projet)
 java -cp out Main
-
-# Avec menu interactif
 java -cp out Main --menu
 ```
 
-## Principes SOLID
+## SOLID (ce qu'on a appliqué)
 
-- **SRP** : `CsvVehiculeLoader`, `GestionnaireFlotte`, `CalculateurStatistiques` et `GenerateurRapport` ont chacun une responsabilité unique
-- **OCP** : ajout d'un nouveau type via `VehiculeFactory` sans modifier la logique de la flotte
+- SRP : le loader CSV, le gestionnaire de flotte, les stats et le rapport sont séparés
+- OCP : nouveau type = nouvelle sous-classe + case dans `VehiculeFactory`, sans tout casser ailleurs
 
-## Lien GitHub
+## GitHub
 
 https://github.com/asinyopetro/Projet-ua3-flotte-vehicules

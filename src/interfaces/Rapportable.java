@@ -1,8 +1,6 @@
 package interfaces;
 
-/**
- * Permet d'exporter une ligne de résumé pour les rapports.
- */
+/** Une ligne de resume pour le rapport. */
 public interface Rapportable {
 
     String genererLigneRapport();

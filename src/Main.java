@@ -12,9 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-/**
- * Point d'entrée — démonstration du système de gestion de flotte.
- */
+/** Point d'entrée du programme. */
 public class Main {
 
     private static final Path FICHIER_CSV = Path.of("data", "vehicules.csv");
@@ -99,18 +97,18 @@ public class Main {
             System.out.println("Erreur capturée (attendu): " + e.getMessage());
         }
 
-        // Remet V002 en état cohérent après le test d'erreur
+        // V002 etait reste loue apres le test d'erreur
         try {
             double tarifCorrige = flotte.retourner("V002", 63500, 2);
-            System.out.printf("Retour corrigé V002 — tarif: %.2f $\n", tarifCorrige);
+            System.out.printf("Retour corrige V002 - tarif: %.2f $\n", tarifCorrige);
         } catch (VehiculeIndisponibleException | KilometrageInvalideException e) {
-            System.out.println("Erreur retour corrigé: " + e.getMessage());
+            System.out.println("Erreur retour corrige: " + e.getMessage());
         }
 
-        // Retour de C002 pour laisser le parc propre avant les statistiques
+        // on rend aussi C002 avant les stats
         try {
             double tarifCamion = flotte.retourner("C002", 49500, 4);
-            System.out.printf("Retour C002 — tarif: %.2f $\n", tarifCamion);
+            System.out.printf("Retour C002 - tarif: %.2f $\n", tarifCamion);
         } catch (VehiculeIndisponibleException | KilometrageInvalideException e) {
             System.out.println("Erreur retour C002: " + e.getMessage());
         }

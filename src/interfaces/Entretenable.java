@@ -2,9 +2,7 @@ package interfaces;
 
 import exceptions.VehiculeIndisponibleException;
 
-/**
- * Contrat pour le suivi des opérations d'entretien.
- */
+/** Entretien / reparation d'un vehicule. */
 public interface Entretenable {
 
     void signalerEntretien() throws VehiculeIndisponibleException;
